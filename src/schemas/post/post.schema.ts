@@ -1,5 +1,5 @@
-import { gql } from "apollo-server-micro";
 
+import gql from "graphql-tag";
 export const typeDefs = gql`
   type Post {
     id: ID!
@@ -7,28 +7,25 @@ export const typeDefs = gql`
     content: String!
     author: User!
     status: String!
-    likes: [User]
-    comments: [Comment]
-    createdAt: String
-  }
-
-  type Comment {
-    body: String!
-    user: User!
+    likes: Int!
+    views: Int!
+    comments:[String]
+    reputationPoints: Int!
+    createdAt: String!
+    updatedAt: String!
   }
 
   type Query {
-  
-    posts(status: String): [Post]
-    post(id: ID!): Post
+    getPost(id: ID!): Post
+    getAllPosts(status: String): [Post]
   }
 
   type Mutation {
-    createPost(title: String!, content: String!): Post
-    approvePost(id: ID!): Post
-    likePost(id: ID!): Post
-    addComment(id: ID!, body: String!): Post
+    createPost(title: String!, content: String!,userId:String!): Post!
+    updatePost(id: ID!, title: String, content: String,userId:String!): Post!
+    submitPost(id: ID!, title: String, content: String,userId:String!): Post!
+    approvePost(id: ID!,userId:String!): Post!
+    likePost(id: ID!,userId:String!): Post!
+    increaseViewCount(id: ID!,userId:String!): Post!
   }
 `;
-
-
