@@ -1,5 +1,6 @@
+import { postModel } from "@/models";
 import { GraphQLError } from "graphql";
-import postModel from "@/models/all/post.model";
+
 
 interface Input {
     title: string,

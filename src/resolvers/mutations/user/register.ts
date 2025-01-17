@@ -1,4 +1,5 @@
-import userModel from "@/models/all/user.model";
+
+import { userModel } from "@/models";
 import bcrypt from "bcryptjs";
 import { GraphQLError } from "graphql";
 import jwt from 'jsonwebtoken';

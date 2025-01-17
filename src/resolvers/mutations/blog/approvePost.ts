@@ -1,8 +1,6 @@
 import { GraphQLError } from "graphql";
-import bcrypt from "bcrypt";
-import jwt from 'jsonwebtoken';
-import userModel from "@/models/all/user.model";
-import postModel from "@/models/all/post.model";
+import { postModel, userModel } from "@/models";
+
 
 interface Input {
    id:string

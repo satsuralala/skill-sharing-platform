@@ -1,7 +1,7 @@
 import { GraphQLError } from "graphql";
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
-import userModel from "@/models/all/user.model";
+import { userModel } from "@/models";
 
 interface Input {
   email: string;

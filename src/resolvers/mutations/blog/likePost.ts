@@ -1,5 +1,5 @@
-import postModel from "@/models/all/post.model";
-import userModel from "@/models/all/user.model";
+import { postModel, userModel } from "@/models";
+
 
 interface Input {
     id: string,
